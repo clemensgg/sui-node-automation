@@ -11,8 +11,9 @@
 
 - name: Creates fullnode directory
   file:
-    path: "{{ sui_fullnode_dir }}"
+    path: "{{ sui_fullnode_dir }}/.sui-fullnode"
     state: directory
+    recursive: true
   become: yes
   become_user: "{{ sui_user }}"
 
@@ -20,13 +21,13 @@
   become: true
   template:
     src: 'sui.fullnode.yaml.j2'
-    dest: "{{ sui_user_dir }}/sui-fullnode/fullnode.yaml"
+    dest: "{{ sui_user_dir }}/.sui-fullnode/fullnode.yaml"
     owner: "{{ sui_user }}"
     group: 'root'
     mode: '0644'
 
 - name: Get genesis blob
-  ansible.builtin.command: curl -fLJO https://github.com/MystenLabs/sui-genesis/raw/main/devnet/genesis.blob
+  ansible.builtin.command: curl -fLJO https://github.com/MystenLabs/sui-genesis/raw/main/{{ sui_target_network }}/genesis.blob
   become: yes
   become_user: "{{ sui_user }}"
   args:

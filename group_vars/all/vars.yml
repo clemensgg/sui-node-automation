@@ -1,7 +1,10 @@
 sui_devnet_branch: "devnet"
+sui_devnet_network: "devnet"
 sui_mainet_branch: "main"
+sui_mainnet_network: "mainnet"
 
-sui_target_branch: "{{ sui_devnet_branch }}"
+sui_target_branch: "{{ sui_mainet_branch }}"
+sui_target_network: "{{ sui_mainnet_network }}"
 
 sui_user: "sui"
 sui_user_dir: "/home/{{ sui_user }}"

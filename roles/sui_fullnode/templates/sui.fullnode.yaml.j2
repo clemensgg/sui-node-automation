@@ -1,5 +1,7 @@
+# Sui "{{ sui_network }}" Fullnode config (auto-generated)
+
 # Update this value to the location you want Sui to store its database
-db-path: "{{ sui_user_dir }}/sui-fullnode/suidb"
+db-path: "{{ sui_user_dir }}/.sui-fullnode/suidb"
 
 network-address: "/dns/localhost/tcp/8080/http"
 metrics-address: "0.0.0.0:9184"
@@ -9,4 +11,4 @@ enable-event-processing: true
 
 genesis:
   # Update this to the location of where the genesis file is stored
-  genesis-file-location: "{{ sui_user_dir }}/sui-fullnode/genesis.blob"
+  genesis-file-location: "{{ sui_user_dir }}/.sui-fullnode/genesis.blob"

@@ -63,6 +63,9 @@
       - pkg-config
       - cmake
       - acl   # needed to prevent errors when building as unprivileged user via become
+      - openssl
+      - protobuf-compiler
+      - clang
     state: present
     update_cache: yes
 
